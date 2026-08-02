@@ -1,4 +1,5 @@
-import "./styles.css";
+import "./homestyles.css";
+import "./menustyles.css";
 
 import { generateHome } from "./home.js";
 import { generateMenu } from "./menu.js";
