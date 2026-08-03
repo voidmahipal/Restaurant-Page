@@ -15,10 +15,10 @@ export default {
   devServer: {
     port: 8080,
     open: true,
-    watchFiles: ["./src/template.html"],
+    watchFiles: ["./src/index.html"],
    },
   plugins: [
-    new HtmlWebpackPlugin({template: "./src/template.html"}),
+    new HtmlWebpackPlugin({template: "./src/index.html"}),
   ],
   module: {
     rules: [
