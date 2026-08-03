@@ -1,8 +1,8 @@
 import path from "path";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 
-export default {
-  mode: "development",
+export default (_, argv) => ({
+  mode: argv.mode || "production",
 
   entry: "./src/index.js",
 
@@ -10,26 +10,27 @@ export default {
     filename: "main.js",
     path: path.resolve("dist"),
     clean: true,
+   publicPath: "./",
   },
-  devtool: "eval-source-map",
+  devtool: argv.mode === "production" ? false : "eval-source-map",
   devServer: {
-    port: 8080,
-    open: true,
-    watchFiles: ["./src/index.html"],
-   },
+   port: 8080,
+   open: true,
+   watchFiles: ["./src/index.html"],
+  },
   plugins: [
-    new HtmlWebpackPlugin({template: "./src/index.html"}),
+   new HtmlWebpackPlugin({ template: "./src/index.html" }),
   ],
   module: {
-    rules: [
-            {
-              test: /\.css$/,
-              use: ["style-loader", "css-loader"],
-            },
-            {
-              test: /\.(png|svg|jpg|jpeg|gif)$/i,
-              type: "asset/resource",
-            }
-    ],
+   rules: [
+     {
+       test: /\.css$/,
+       use: ["style-loader", "css-loader"],
+     },
+     {
+       test: /\.(png|svg|jpg|jpeg|gif)$/i,
+       type: "asset/resource",
+     },
+   ],
   },
-};
+});
