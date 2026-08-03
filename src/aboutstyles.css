@@ -1,0 +1,54 @@
+.aboutus{
+    display: flex;
+}
+.story{
+    background-color: #111111;
+    padding: 20px;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.story h3{
+    font-size: 60px;
+    color: #A67C2E;
+}
+.story p{
+    color: white;
+    font-size: 20px;
+    line-height: 30px;
+}
+.story+img{
+    width: 70%;
+    height: 400px;
+}
+.Learnbtn{
+    width: 160px;
+    height: 40px;
+}
+.foot{
+    height: 170px;
+    background-color: #242222;
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+}
+.visit,.contact{
+    padding: 10px;
+    border: 1px solid #111111 ;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.visit h3,.contact h3{
+    color: #A67C2E;
+}
+.visit p{
+    color: white;
+}
+.contact{
+    width: 190px;
+}
+.contact p{
+    color:white;
+}
